@@ -55,16 +55,17 @@ function ExpenseHistory(props) {
       <ul>
           {expenses.map((expense) => (
           <li key={expense.id}>
-              <span>
-              <label>{expense.name}</label>
-              <label>{expense.amount}</label>
-              </span>
-              <button onClick={() => removeExpense(expense.id, parseFloat(expense.amount))}>
-              Top Up
+              <div className="expense-list">
+                <span>{expense.name}</span>
+                <span>{expense.amount}</span>
+                <button onClick={() => removeExpense(expense.id, parseFloat(expense.amount))}>
+                Top Up
               </button>
               <button onClick={() => editExpense(expense.id)}>
-              Edit Expense
+                Edit Expense
               </button>
+              </div>
+              
           </li>
           ))}
       </ul>

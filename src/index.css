@@ -33,6 +33,7 @@ button {
   background-color: #4285f4;
   color: #fff;
   padding: 10px;
+  margin: 10px;
   border-radius: 5px;
   border: none;
   font-size: 16px;
@@ -46,23 +47,6 @@ button:hover {
 hr{
   width: 80%;
   margin-top: 50px;
-}
-
-ul{
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  margin: 10px 0;
 }
 
 header, .expense-history {
@@ -81,6 +65,7 @@ p {
   font-size: 20px;
   margin-bottom: 10px;
 }
+
 input {
   font-size: 20px;
   padding: 10px;
@@ -89,18 +74,31 @@ input {
   margin-bottom: 10px;
 }
 
+/*Expense History styling*/
+ul {
+  margin: 0 auto;
+  text-align: center;
+  list-style: none;
+}
 
-li span {
+li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  padding: 10px;
+  margin: 10px;
+}
+
+.expense-list {
   display: flex;
-  justify-content: space-between;
-  margin-right: 10px;
-  
+  align-items: center;
+  white-space:nowrap;
+  overflow:auto;
 }
-
-li label{
-  padding-right: 10px;
+.expense-list span{
+  padding: 10px;
+  width: 30%;
 }
-
 li button {
   font-size: 16px;
   padding: 10px;
@@ -109,6 +107,7 @@ li button {
   background-color: #333;
   color: #fff;
   cursor: pointer;
+  align-items: end;
 }
 
 li button:last-of-type {
