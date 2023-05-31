@@ -1,9 +1,10 @@
 import React from "react";
-import ExpenseForm from "./ExpenseForm";
+import NewExpenseForm from "./NewExpenseForm";
+import { useAppContext } from "./App";
 
-function HandleExpenses(props) {
+function HandleExpenses() {
   // Add expenses
-  const { walletAmount, setWalletAmount, expenses, setExpenses } = props;
+  const { walletAmount, setWalletAmount, expenses, setExpenses } = useAppContext();
 
   const addExpense = (name, amount) => {
     const newExpense = {
@@ -17,7 +18,7 @@ function HandleExpenses(props) {
 
   return (
     <div>
-      <ExpenseForm onAddExpense={addExpense} />
+      <NewExpenseForm onAddExpense={addExpense} />
     </div>
   );
 }

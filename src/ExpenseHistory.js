@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { useAppContext } from "./App";
 
-function ExpenseHistory(props) {
+function ExpenseHistory() {
   // View expense history, remove, or edit
-  const { walletAmount, setWalletAmount, expenses, setExpenses } = props;
+  const { walletAmount, setWalletAmount, expenses, setExpenses } = useAppContext();
   const [selectedExpense, setSelectedExpense] = useState(null);
 
   const removeExpense = (id, amount) => {

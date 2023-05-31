@@ -1,9 +1,11 @@
 import {React, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "./App";
 
-function HomePage({setWalletAmount}) {
+function HomePage() {
   const [walletLimit, setWalletLimit] = useState(0);
   const navigate = useNavigate();
+  const {setWalletAmount} = useAppContext();
 
   const handleWalletSubmit = (event) => {
     event.preventDefault();

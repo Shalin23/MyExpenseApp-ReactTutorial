@@ -1,8 +1,9 @@
 import HandleExpenses from "./HandleExpenses";
 import ExpenseHistory from "./ExpenseHistory";
+import { useAppContext } from "./App";
 
-function ExpensePage (props){
-    const { walletAmount, setWalletAmount, expenses, setExpenses } = props;
+function ExpensePage (){
+    const { walletAmount, expenses } = useAppContext();
     const totalExpenses = expenses.reduce((total, expense) => {
         return total + expense.amount;
       }, 0);
@@ -17,19 +18,9 @@ function ExpensePage (props){
                 )}
                 <p>Total Expense: Rs.{totalExpenses}</p>
             </header>
-            <HandleExpenses
-                walletAmount={walletAmount} 
-                setWalletAmount={setWalletAmount}
-                expenses={expenses} 
-                setExpenses={setExpenses} 
-            />
+            <HandleExpenses/>
             <hr></hr>
-            <ExpenseHistory
-                walletAmount={walletAmount} 
-                setWalletAmount={setWalletAmount}
-                expenses={expenses} 
-                setExpenses={setExpenses}
-            />
+            <ExpenseHistory/>
         </div>
     );
 }
